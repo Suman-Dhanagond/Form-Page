@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>💚 Suman 💚</title><style >
+	
+		body{
+		font-family: Arial,Helvetia,sans-serif; }
+		.demo{
+			margin: auto;padding: 20px;width: 1200px;border: 1px solid black;
+		}
+		
+	</style>
+</head>
+<body>
+	<h2 style="text-align: center;color: black;">Employee Details</h2>
+	<form  action="#" onsubmit="return validation()" class="demo" style="background-color:#F0FFFF;" >
+		<div>
+			<b>NAME :</b><font color="red">*</font> <input type="text" name="name" class="form-control" id="fname"  autocomplete="off">
+			<span id="fn" class="text-danger font-weigth-bold" style="color: red;"></span>
+
+		</div><br>
+
+		<div>
+			<b>EMAIL :</b><font color="red">*</font> <input type="email" name="Myemail" id="email" autocomplete="off">
+			<span id="en" class="text-danger font-weigth-bold" style="color: red;"></span>
+		</div><br>
+
+		<div>
+			
+			<label for="start"><b>BIRTH DATE :</b><font color="red">*</font></label>
+
+					<input type="date" id="start" name="date-start">
+					<span id="bd" class="text-danger font-weigth-bold" style="color: red;"></span>
+					
+                              
+		</div><br>
+
+		<div>
+			<b>MOBILE NUMBER :</b><font color="red">*</font> <input type="text" name="num" id="mobile" autocomplete="off">
+			
+		</div><br>
+		
+		<div>
+			<b>GENDER :</b><font color="red">*</font><input type="radio" name="MyGender">Male
+				       <input type="radio" name="MyGender">Female
+		</div><br>
+
+		
+
+		<div>
+			<b>RESUME :</b><font color="red">*</font>   <input type="file" name="Myfile" id="filename">
+		</div><br>
+
+		<div>
+			<label for="country"><b>COUNTRY :</b><font color="red">*</font></label>
+              <select id="country" name="countrylist" form="countryform">
+              	<option value="select">Select Country</option>
+                <option value="india">INDIA</option>
+                <option value="usa">USA</option>
+                <option value="londan">LONDAN</option>
+                <option value="japan">JAPAN</option>
+               </select>
+
+			
+		</div><br>
+
+		<div>
+			<label for="state"><b>STATE :<font color="red">*</font></b></label>
+			<select id="state" name="statelist" form="stateform">
+				<option value="select">Select State</option>
+				<option value="karnataka">KARNATAKA</option>
+				<option value="delhi">DELHI</option>
+				<option value="goa">GOA</option>
+				<option value="california">CALIFORNIA</option>
+				<option value="ohio">OHIO</option>
+				<option value="new jersey">NEW JERSEY</option>
+				<option value="bromely">BROMELY</option>
+				<option value="bexley">BEXLEY</option>
+				<option value="havering">HAVERING</option>
+				<option value="thoku">THOKU</option>
+				<option value="kanto">KANTO</option>
+				<option value="chubu">CHUBU</option>
+
+
+				
+			</select>
+			
+		</div><br>
+
+		<div>
+			<b>AGE :</b><font color="red">*</font>  <input type="number" name="Myage" autocomplete="off" id="age">
+			<span id="ag" class="text-danger font-weigth-bold"></span>
+		</div><br>
+
+		<div>
+			<b>ADDRESS :</b><font color="red">*</font><br> <textarea name="MyName" rows="10" cols="25" autocomplete="off" style="font-family: "Times New Roman"; margin: 0px; width: 402px; height: 72px"></textarea>
+		</div><br>
+
+		<div>
+			<legend><b>SELECT YOUR HOBBIES :</b><font color="red">*</font></legend>
+            <input type="checkbox" name="hobby" value="sports" id="sport">
+            <label for="sport">Sports</label><br>
+            <input type="checkbox" name="hobby" value="music" id="music">
+            <label for="music">Music</label><br>
+            <input type="checkbox" name="hobby" value="reading" id="read">
+            <label for="read">Reading</label><br>
+            <input type="checkbox" name="hobby" value="travelling" id="travelling">
+            <label for="travelling">Travelling</label><br>
+            <input type="checkbox" name="coding">
+            <label for="coding">Codding</label><br><br>
+
+		<div style="text-align: center;">
+			<input type="Submit" value="Submit" style="background-color: green;border: none;padding-top: 5px;padding-bottom: 5px;border-radius: 6px;color: white;width: 300px;"></div>
+
+		<script type="text/javascript">
+			
+			function validation() {
+							var fname=document.getElementById('fname').value;
+							var email=document.getElementById('email').value;
+							var mobile=document.getElementById('mobile').value;
+							var age=document.getElementById('age').value;
+							var start=document.getElementById('start').value;
+
+				if(fname==""){
+								document.getElementById('fn').innerHTML="Please enter your Name";
+								return false;
+							}
+				if ((fname.length<=2) ||(fname.length>20)){
+							 	document.getElementById('fn').innerHTML="Name between 2to20 characters";
+								return false;
+
+							 }
+
+				if (!isNaN(fname)) {
+							 	document.getElementById('fn').innerHTML="Only characters are allowed";
+								return false;
+
+							 }
+
+				
+
+				if(email==""){
+								document.getElementById('en').innerHTML="Please enter your Email Id";
+								return false;
+							}
+				if (email.indexOf('@')<=0) {
+								document.getElementById('en').innerHTML="@ invalid Position";
+								return false;
+
+							}
+			if ((email.charAt(email.length-4)!='.')&& (email.charAt(email.length-3)!='.')) {
+								document.getElementById('en').innerHTML=". invalid Position";
+								return false;
+
+							}
+				
+				
+				if(mobile==""){
+							document.getElementById('mb').innerHTML="Please enter your Mobile Number";
+								return false;
+							}
+
+
+				if (isNaN(mobile)) {
+							document.getElementById('mb').innerHTML="Enter only Numeric value";
+								return false;
+							}
+
+				if(mobile.length!=10){
+							document.getElementById('mb').innerHTML="Mobile Number must be 10 Digits only";
+								return false;
+
+							}
+				
+
+				if ((mobile.charAt(0)!=9) &&(mobile.charAt(0)!=8)  &&(mobile.charAt(0)!=7)){
+					document.getElementById('mb').innerHTML="Mobile Number must start with 9,8 and 7";
+								return false;
+
+				}
+
+
+				if (isNaN(age) || age < 1 || age > 100){
+						document.getElementById('ag').innerHTML="The age must be a number between 1 and 100";
+							 return false;
+				}
+
+				
+
+				
+				}
+						
+
+
+			</script>
+		</form>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
